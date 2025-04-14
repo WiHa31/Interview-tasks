@@ -2,16 +2,16 @@ import { Box, Heading } from "grommet";
 import styles from "./styles.css";
 
 const tstObj: any = {a: '1', b: { d: '3', e: {g: '4'}, f: {h: '5'}}, c: '2'};
-const tstPath = 'b.f.h' // 5
+const tstPath = 'b.f.h'
 const answer1 = '5'
 
 const tstObj2: any = {a: null, b: { d: '3', e: {g: '4'}, f: {h: '5'}}, c: { d: { e: { f: {}, j: { k: '2'}} }, e: null }};
-const tstPath2 = 'c.d.e.j.k' // 5
+const tstPath2 = 'c.d.e.j.k'
 const answer2 = '2'
 
 
 const tstObj3: any = {a: null, b: { d: {}, e: null }, c: { c: { c: '7'}}};
-const tstPath3 = 'c.c.c' // 5
+const tstPath3 = 'c.c.c'
 const answer3 = '7'
 
 
