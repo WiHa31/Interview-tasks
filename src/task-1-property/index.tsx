@@ -25,7 +25,6 @@ export const ObjProperty = () => {
         return null
     }
 
-    // код ниже не трогаем
     return (
         <div className={styles.ObjProperty}>
             <Heading level={3} margin={{ top: 'small' }}>
