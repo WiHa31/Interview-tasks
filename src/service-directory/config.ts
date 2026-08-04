@@ -1,6 +1,6 @@
 import { TabType } from "./types";
 import { Todo } from "../task-2-to-do/Todo";
-import { Schedule } from "../task-3-shedule/Schedule";
+import { UsersDirectory } from "../task-3-users/UsersDirectory";
 import { ObjProperty } from "../task-1-property";
 
 export const globalTheme = {
@@ -30,11 +30,12 @@ export const tabsConfig: Array<TabType> = [
         component: Todo,
     },
     {
-        id: 'schedule',
+        id: 'users',
         title: 'Задание 3',
-        task: '1. Починить компонент Schedule\n' +
-            '2. Нормализовать данные из getSchedule\n' +
-            '3. Отрисованный список должен быть равен отрисованному справа',
-        component: Schedule,
+        task: '1. Открыть консоль браузера и починить рантайм-ошибку в компоненте UsersDirectory\n' +
+            '2. Обработать состояния загрузки и ошибки запроса (API рандомно отдаёт 500)\n' +
+            '3. Нормализовать данные из getUsers: убрать дубли и пустые записи, привести статус к человекочитаемому виду\n' +
+            '4. После загрузки вывести нормализованный список в консоль через console.table(...)',
+        component: UsersDirectory,
     },
 ]
