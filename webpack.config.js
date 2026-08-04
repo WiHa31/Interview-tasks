@@ -1,4 +1,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const ReactRefreshTypeScript = require("react-refresh-typescript").default;
+
+const isDevelopment = true;
 
 module.exports = {
   devtool: "source-map",
@@ -10,7 +14,14 @@ module.exports = {
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: "ts-loader",
+        use: {
+          loader: "ts-loader",
+          options: {
+            getCustomTransformers: () => ({
+              before: [isDevelopment && ReactRefreshTypeScript()].filter(Boolean),
+            }),
+          },
+        },
       },
       {
         test: /\.css$/i,
@@ -34,7 +45,8 @@ module.exports = {
       template: "./index.html",
       filename: "index.html",
     }),
-  ],
+    isDevelopment && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
   devServer: {
     static: "./dist",
     port: 3000,
