@@ -7,10 +7,6 @@ type Props = {
   onAdd?: (name: string) => void;
 };
 
-/**
- * Компонент полностью готовый
- * Менять смысла нет!
- */
 export function TaskInput({ onAdd }: Props) {
   const [name, setName] = useState("");
 
